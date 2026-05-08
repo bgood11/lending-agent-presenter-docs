@@ -1,0 +1,63 @@
+---
+title: Lending Agent Presenter
+description: Implementation, architecture, safety, privacy, and regulatory guidance for a menu-style finance presentment demo.
+template: splash
+hero:
+  tagline: A menu-style finance presentment demo. Every contracted option, every customer, every time. Open URL for sales reps, magic-link acknowledgement on the customer's own device, audit-only retailer admin portal.
+  image:
+    file: ../../assets/logo.svg
+  actions:
+    - text: Open the demo
+      link: https://lending-agent-presenter.vercel.app
+      icon: external
+      variant: primary
+    - text: What it is
+      link: /introduction/what-it-is/
+      icon: right-arrow
+    - text: View source
+      link: https://github.com/bgood11/lending-agent-presenter
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Quick links by audience
+
+<CardGrid>
+	<LinkCard title="For retailers" href="/implementation/retailers/adoption-path/" description="If you sell furniture, kitchens, solar, dental, mobility, or any high-value goods that customers finance, start here." />
+	<LinkCard title="For brokers" href="/implementation/brokers/adoption-path/" description="If you hold the FCA permission and arrange consumer credit through a panel of lenders." />
+	<LinkCard title="For regulators & risk teams" href="/regulatory/overview/" description="Consumer Duty, CONC 4.2 adequate explanations, vulnerable customers, audit-as-evidence." />
+	<LinkCard title="See also: Lending Agent" href="https://lending-agent-docs.vercel.app" description="The waterfall sibling. AI-mediated agentic credit broking with sequential lender waterfall and replayable audit log." />
+</CardGrid>
+
+## What you'll find here
+
+<CardGrid>
+	<Card title="Product walkthrough" icon="document">
+		Marketing landing, rep tablet, customer phone, retailer admin, skin switcher. [Start here](/product/marketing-landing/).
+	</Card>
+	<Card title="Architecture" icon="setting">
+		Data model, magic-link mechanics, per-surface state machines, mock-vs-real boundary, cold-start recovery. [Read the architecture](/architecture/overview/).
+	</Card>
+	<Card title="Safety" icon="seti:lock">
+		Threat model, rate limiting, vulnerable customer protection, tampering and replay. [Safety overview](/safety/overview/).
+	</Card>
+	<Card title="Privacy" icon="information">
+		UK GDPR, DPIA framework, data minimisation, retention, sub-processors, PECR. [Privacy overview](/privacy/overview/).
+	</Card>
+	<Card title="Regulatory" icon="open-book">
+		Consumer Duty, CONC 4.2, CONC 3.5, vulnerable customers, audit-as-evidence. [Regulatory overview](/regulatory/overview/).
+	</Card>
+	<Card title="Deploy your own" icon="rocket">
+		Run locally, deploy to Vercel, wire a custom domain, harden for production. [Deploy guide](/deploy/local/).
+	</Card>
+</CardGrid>
+
+## The TL;DR
+
+A demo product that lets a sales rep build a finance quote in seconds, send it to a customer's phone via magic link, capture the customer's acknowledgement of key features asynchronously on their own device, and surface every quote to the retailer's admin portal for audit. No per-rep authentication. No dense wizard. No synchronous tablet handover.
+
+The product is positioned as **tooling for FCA-regulated retailers and brokers**. The retailer (or broker) holds the FCA credit-broking permission. Lending Agent Presenter sells the tooling.
+
+> This is a demo product, built independently. The UI/UX surfaces are real. The backend, magic-link signing, email delivery, PDF generation, and audit storage are documented at engineering-spec depth but not yet implemented in v1. Documentation is for productisation conversations.
